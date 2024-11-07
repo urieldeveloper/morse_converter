@@ -12,7 +12,7 @@ const morseCodeMap: { [key: string]: string } = {
   '/': '-..-.', '@': '.--.-.', '(': '-.--.', ')': '-.--.-'
 };
 
-// Reversion del diccionario para morse-texto
+// Reversión del diccionario para morse-texto
 const textMap: { [key: string]: string } = Object.entries(morseCodeMap)
   .reduce((acc, [key, value]) => {
     acc[value] = key;
@@ -22,7 +22,7 @@ const textMap: { [key: string]: string } = Object.entries(morseCodeMap)
 // Función convertidora texto a Morse
 function textToMorse(text: string): string {
   return text.toUpperCase().split('').map(char => {
-    return morseCodeMap[char] || '';  // Si el carácter no existe, se omite
+    return morseCodeMap[char] || '';
   }).join(' ');
 }
 
